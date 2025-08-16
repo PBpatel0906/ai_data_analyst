@@ -47,6 +47,3 @@ if uploaded_file is not None:
         file_name="processed_data.csv",
         mime="text/csv"
     )
-
-
-
