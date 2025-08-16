@@ -40,10 +40,11 @@ if uploaded_file is not None:
         )
 
     # Download dataset
-    st.subheader("⬇ Download Options")
-    st.download_button(
-        label="📥 Download Processed Data (CSV)",
-        data=download_csv(df),
-        file_name="processed_data.csv",
-        mime="text/csv"
-    )
+ #   st.subheader("⬇ Download Options")
+ #   st.download_button(
+  #      label="📥 Download Processed Data (CSV)",
+   #     data=download_csv(df),
+    #    file_name="processed_data.csv",
+     #   mime="text/csv"
+    #)
+
