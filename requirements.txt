@@ -8,3 +8,5 @@ streamlit==1.37.1
 matplotlib
 requests==2.32.3
 seaborn
+pdfplumber
+PyPDF2
