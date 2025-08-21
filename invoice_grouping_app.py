@@ -4,18 +4,22 @@ import pdfplumber
 import re
 import os
 from collections import defaultdict
-from PyPDF2 import PdfMerger
+from PyPDF2 import PdfMerger, PdfReader
 
 # -------------------------------
 # Helper Functions
 # -------------------------------
 
+from PyPDF2 import PdfReader
+
 def extract_text(pdf_path):
-    """Extract text from a PDF file."""
+    """Extract text from PDF using PyPDF2 (simpler than pdfplumber)."""
     text = ""
-    with pdfplumber.open(pdf_path) as pdf:
-        for page in pdf.pages:
-            text += page.extract_text() or ""
+    reader = PdfReader(pdf_path)
+    for page in reader.pages:
+        page_text = page.extract_text()
+        if page_text:
+            text += page_text
     return text
 
 def extract_postcode(text):
@@ -90,4 +94,5 @@ if uploaded_files:
                         mime="application/pdf"
                     )
         else:
+
             st.warning("No UK postcodes found in uploaded invoices.")
